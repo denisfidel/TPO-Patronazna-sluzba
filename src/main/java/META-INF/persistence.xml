@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+	<persistence-unit name="tpo-patronazna-sluzba">
+		<class>si.uni.lj.fri.tpo.entitete.model.Aktivnosti</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.BarvaEpruvete</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.CrnaLista</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.DelovniNalog</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.DodeljenoOsebje</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.Injekcije</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.IzvajalecZd</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.KontaktnaOseba</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.Ljudje</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.Material</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.MaterialDn</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.NamenObiska</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.Obisk</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.OdvzemKrvi</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.Okoli</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.Osebje</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.OstaliPodatki</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.Pacient</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.Posta</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.SorodstvenaVez</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.StatusDn</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.StatusObiska</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.StatusUr</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.UporabniškiRačun</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.VlogaOsebja</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.VrstaObiska</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.VrstaPodatka</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.VrstaStoritve</class>
+		<class>si.uni.lj.fri.tpo.entitete.model.Zdravila</class>
+	</persistence-unit>
+</persistence>
