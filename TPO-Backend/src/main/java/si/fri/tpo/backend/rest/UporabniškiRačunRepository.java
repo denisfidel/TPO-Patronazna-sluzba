@@ -7,5 +7,4 @@ import si.fri.tpo.backend.jpa.UporabniškiRačun;
 
 @RepositoryRestResource(collectionResourceRel = "UporabniškiRačun", path="uporabniškiRačun")
 public interface UporabniškiRačunRepository extends JpaRepository<UporabniškiRačun, Integer> {
-
 }

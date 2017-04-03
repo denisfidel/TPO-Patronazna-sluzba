@@ -2,6 +2,11 @@ package si.fri.tpo.backend.jpa;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonView;
+
 import java.util.Date;
 import java.util.List;
 
@@ -18,6 +23,7 @@ public class Pacient implements Serializable {
 
 	@Id
 	@Column(unique=true, nullable=false)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Integer id;
 
 	@Temporal(TemporalType.DATE)
@@ -56,22 +62,22 @@ public class Pacient implements Serializable {
 	private List<DelovniNalog> delovniNalogs;
 
 	//bi-directional many-to-one association to Okoli
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
 	@JoinColumn(name="id_okolis", nullable=false)
 	private Okoli okoli;
 
 	//bi-directional many-to-one association to Posta
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
 	@JoinColumn(name="id_posta", nullable=false)
 	private Posta posta;
 
 	//bi-directional many-to-one association to SorodstvenaVez
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
 	@JoinColumn(name="razmerje_kontakt")
 	private SorodstvenaVez sorodstvenaVez1;
 
 	//bi-directional many-to-one association to SorodstvenaVez
-	@ManyToOne
+	@ManyToOne(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
 	@JoinColumn(name="razmerje_ur")
 	private SorodstvenaVez sorodstvenaVez2;
 
@@ -154,7 +160,7 @@ public class Pacient implements Serializable {
 	public void setDelovniNalogs(List<DelovniNalog> delovniNalogs) {
 		this.delovniNalogs = delovniNalogs;
 	}
-
+	
 	public Okoli getOkoli() {
 		return this.okoli;
 	}

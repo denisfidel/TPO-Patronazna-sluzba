@@ -1,0 +1,93 @@
+<h2>Ustvari račun</h2>
+<div *ngIf="uporabnik">
+	<form  (ngSubmit)="submitForm()">
+		<table>
+			<tr>
+				<td><label for="name">Ime</label></td>
+				<td><input [(ngModel)]="uporabnik.ime" id="ime" name="ime" required/></td>
+			</tr>
+			<tr>
+				<td><label for="priimek">Priimek</label></td>
+				<td><input [(ngModel)]="uporabnik.priimek" id="priimek" name="priimek" required/></td>
+			</tr>
+			<tr>
+				<td><label for="email">Email</label></td>
+				<td><input [(ngModel)]="uporabnik.email" id="email" name="email" type="email" required/></td>
+			</tr>
+			<tr>
+				<td><label for="geslo">Geslo</label></td>
+				<td><input [(ngModel)]="uporabnik.geslo" id="geslo" name="geslo" type="password" required/></td>
+			</tr>
+			<tr>
+				<td><label for="geslo">Ponovno geslo</label></td>
+				<td><input id="geslo2" name="kontrola" type="password" required/></td>
+			</tr>
+			<tr>
+				<td><label for="telefon">Telefonska številka</label></td>
+				<td><input [(ngModel)]="uporabnik.telefon" id="telefon" name="telefon" required/></td>
+			</tr>
+			<tr>
+				<td><label for="naslov">Naslov</label></td>
+				<td><input [(ngModel)]="uporabnik.naslov" id="naslov" name="naslov" required/></td>
+			</tr>
+			<tr>
+				<td><label for="posta">Poštna številka</label></td>
+				<td><input [(ngModel)]="uporabnik.posta" id="posta" name="posta" type="number" min="1000" max="9999" required/></td>
+			</tr>
+			<tr>
+				<td><label for="stKartice">Številka kartice</label></td>
+				<td><input [(ngModel)]="uporabnik.stKartice" id="stKartice" name="stKartice" required/></td>
+			</tr>
+			<tr>
+				<td><label for="rosjtvo">Datum rojstva</label></td>
+				<td><input [(ngModel)]="uporabnik.datumRojstva" id="rojstvo" name="rojstvo" type="date" required/></td>
+			</tr>
+			<tr>
+				<td><label for="spol">Spol</label></td>
+				<td>
+					<select [(ngModel)]="uporabnik.spol" name="spol" required="required">
+						<option value="moski">Moški</option>
+						<option value="zenska">Ženski</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+		<div *ngIf = "!niDodan">
+			<br>
+			<h4>Podatki o kontaktu</h4>
+			<table>
+				<tr>
+					<td><label for="ime">Ime</label></td>
+					<td><input [(ngModel)]="kontakt.ime" id="imeKontakt" name="imeKontakt" required/></td>
+				</tr>
+				<tr>
+					<td><label for="priimek">Priimek</label></td>
+					<td><input [(ngModel)]="kontakt.priimek" id="priimekKontakt" name="priimekKontakt" required/></td>
+				</tr>
+				<tr>
+					<td><label for="naslov">Naslov</label></td>
+					<td><input [(ngModel)]="kontakt.naslov" id="naslovKontakt" name="naslovKontakt" required/></td>
+				</tr>
+				<tr>
+					<td><label for="posta">Pošta</label></td>
+					<td><input [(ngModel)]="kontakt.posta" id="postaKontakt" name="postaKontakt" type="number" min="1000" max="9999" required/></td>
+				</tr>
+				<tr>
+					<td><label for="telefon">Telefonska številka</label></td>
+					<td><input [(ngModel)]="kontakt.telefon" id="telefonKontatk" name="telefonKontatk" required/></td>
+				</tr>
+				<tr>
+					<td><label for="sorodstvenoRazmerje">Sorodstveno razmerje</label></td>
+					<td>
+						<select [(ngModel)]="uporabnik.sorodstvenaVez1" name="sorodstvenaVez" required="required">
+							<option *ngFor="let vez of vezi" [ngValue]="vez.id">{{vez.naziv}}</option>
+						</select>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<button *ngIf="niDodan" type="button" (click)="dodajKontaktnoOsebo()">Dodaj kontaktno osebo</button>
+		<button *ngIf="!niDodan" (click) = "odstarniKOntaktnoOsebo()">Odstarni kontaktno osebo</button>
+		<button type="submit">Dodaj</button>
+	</form>
+</div>

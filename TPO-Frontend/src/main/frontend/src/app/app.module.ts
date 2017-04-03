@@ -1,20 +1,26 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {NgModule}      from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {HttpModule}    from '@angular/http';
+import {FormsModule}   from '@angular/forms';
 
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+
+import {AppComponent}         from './app.component';
+import {UporabniskiRacunDodajComponent}      from './pacient/uporabniskiRacun-dodaj.component';
+import {UporabnikService} from './pacient/uporabnik.service';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    UporabniskiRacunDodajComponent,
+  ],
+  providers: [UporabnikService],
+  bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
